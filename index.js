@@ -12,8 +12,6 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(ejsLayouts);
 app.use(express.static(__dirname + "/public/"));
 
-// app.use(require("./api/izi-api.js"));
-
 app.get("/", function(req, res) {
   res.render("home");
 });
@@ -24,17 +22,19 @@ var clientObject = {};
 /* Objects are rendered here */
 function iziCallback(iziObject) {
   console.log("FINISHED!!!! CLIENT CODE(first title): " + iziObject.iziTitle[0]); 
+  clientObject = {};
   clientObject = iziObject;
   app.get("/city", function(req, res) {
     res.render("city", {city: clientObject});
   });
 }
 
-function callApi() {
-  console.log("hello, world");
-}
+app.post('/city', function(req, res) {
+  var city = req.body.city.replace(" ", "%20");
+  izi.iziCall(city, process.env.IZI_API, iziCallback);
+  setTimeout(function() {res.redirect("/city");}, 90000);
+});
 
-izi.iziCall("Amsterdam", process.env.IZI_API, iziCallback);
 /*end api call*/
 
 app.listen(3000);
