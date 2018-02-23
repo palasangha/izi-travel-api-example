@@ -2,9 +2,12 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "dotenv": "^5.0.0",
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-ejs-layouts": "^2.3.1",
     "izi-travel-api": "^0.1.10",
+    "jsdom": "^11.6.2",
+    "node-dom": "^0.1.0",
     "project-name": "*"
   },
   "name": "izi-travel-api-test",

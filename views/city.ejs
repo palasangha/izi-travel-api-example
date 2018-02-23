@@ -1,0 +1,40 @@
+<h1 class="text-center">City</h1>
+<% for(var i = 0; i < city.iziTitle.length; i++) { %>
+  <h2><%= city.iziType[i].charAt(0).toUpperCase() + city.iziType[i].slice(1) %>: <%= city.iziTitle[i] %></h2>
+  <hr/>
+  <h3><%= city.iziCity[i] %>, <%= city.iziCountry[i].toUpperCase() %></h3>
+  <h4>lat, lon: <%= city.iziLatitude[i] %>, <%= city.iziLongitude[i] %></h4>
+  <h4>Phone: <%= city.iziPhoneNumber[i] %></h4>
+  <h4>Website: <%= city.iziWebsite[i] %></h4>
+  <img src=<%= city.imageFile[i] %>>
+  <p><%= city.iziDescription %></p>
+  <h2>Original Object: <%= city.iziOriginal[i] %></h2>
+  <hr/>
+<% }; %>
+
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      console.log("<%= city.iziCountry[0] %>");
+      function initMap() {
+        markers = [];
+        var center = {lat: <%= city.iziLatitude[0] %>, lng: <%= city.iziLongitude[0] %>};
+        var center2 = {lat: <%= city.iziLatitude[1] %>, lng: <%= city.iziLongitude[1] %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: center
+        });
+        var marker = new google.maps.Marker({
+          position: center,
+          map: map
+        });
+        var marker2 = new google.maps.Marker({
+          position: center2,
+          map: map
+        });
+        console.log("<%= city.iziCountry[0] %>");
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJq43DKyz36PwuZu9EOMLvbocgHn8FTsM&callback=initMap">
+    </script>
