@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "express-ejs-layouts": "^2.3.1",
+    "izi-travel-api": "^0.1.10",
+    "project-name": "*"
+  },
+  "name": "izi-travel-api-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "“Justin <“j.mitchell.real@gmail.com”> (https://github.com/JustinPMitchell)",
+  "license": "ISC",
+  "description": ""
+}
