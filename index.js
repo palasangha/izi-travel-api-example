@@ -8,4 +8,4 @@ function iziCallback(iziObject) {
   clientObject = iziObject;
 }
 
-izi.iziCall("Amsterdam", "ded2b49e-e1f0-4917-a0c9-aeea61529c75", iziCallback);
+izi.iziCall("Amsterdam", process.env.SESSION_SECRET, iziCallback);
