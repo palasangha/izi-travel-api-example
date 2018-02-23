@@ -3,7 +3,8 @@
 ![picture](./images/city-page.png)
 ![picture](./images/npm.png)
 
-Two players try to knock each other out of the ring by bumping and kicking each other using a single keyboard.
+A small library that makes the izi-travel-api a little easier
+NPM - https://www.npmjs.com/package/izi-travel-api
 
 ## Approach Taken
 
